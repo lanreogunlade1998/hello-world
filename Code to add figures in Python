@@ -1,0 +1,48 @@
+def generate_html_with_figure(image_src, caption):
+    html_code = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Figure Example</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0;
+            }
+            .container {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            figure {
+                text-align: center;
+            }
+            figcaption {
+                font-style: italic;
+                color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Figure Example</h1>
+            <figure>
+                <img src="{image_src}" alt="Figure">
+                <figcaption>{caption}</figcaption>
+            </figure>
+        </div>
+    </body>
+    </html>
+    """.format(image_src=image_src, caption=caption)
+    return html_code
+
+# Example usage:
+html_code = generate_html_with_figure("image.jpg", "This is a figure caption")
+print(html_code)
